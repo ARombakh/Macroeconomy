@@ -29,10 +29,29 @@ public class Macroeconomy {
         
         purchase.makePurchase(5, 3);
         
-        System.out.printf("After purchase\n");
+        farm.sellFood(purchase);
+        reseller.buyFood(purchase);
+        
+        System.out.println("After purchase");
         
         System.out.println(farm.state());
         
         System.out.println(reseller.state());
+        
+        Worker worker = new Worker(0, 1.7);
+        
+        System.out.println(worker.state());
+        
+        Work work = new Work(worker, farm);
+        
+        work.doWork(3);
+        
+        farm.receiveFood(work);
+        worker.receiveMoney(work);
+        
+        System.out.println("After work");
+        
+        System.out.println(farm.state());
+        System.out.println(worker.state());
     }
 }
