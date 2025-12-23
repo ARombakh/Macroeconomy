@@ -10,7 +10,6 @@ package macroeconomy;
  */
 public class Farm {
     private int id;
-    private int labor;
     private int food;
     private int money;
     private double productivity;
@@ -21,14 +20,6 @@ public class Farm {
 
     public int getId() {
         return id;
-    }
-
-    public void setLabor(int labor) {
-        this.labor = labor;
-    }
-
-    public int getLabor() {
-        return labor;
     }
     
     public void setProductivity(double productivity) {
@@ -68,7 +59,6 @@ public class Farm {
     
     public String state () {
         return ("id: " + getId() + "\n" +
-                "labor: " + getLabor() + "\n" +
                 "food: " + getFood() + "\n" +
                 "money: " + getMoney() + "\n" +
                 "productivity: " + getProductivity() + "\n");
