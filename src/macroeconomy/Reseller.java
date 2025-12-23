@@ -42,10 +42,9 @@ public class Reseller {
         setMoney(money);
     }
     
-    public void buyFood (int units, int price) {
-        int cost = units * price;
-        setFood(getFood() + units);
-        setMoney(getMoney() - cost);
+    public void buyFood (Purchase purchase) {
+        setFood(getFood() + purchase.getUnits());
+        setMoney(getMoney() - purchase.getMoney());
     }
     
     public void sellFood (int units, int price) {
@@ -55,7 +54,7 @@ public class Reseller {
     }
     
     public String state () {
-        return ("id: " + getId() + "\n" +
+        return ("Reseller id: " + getId() + "\n" +
                 "money: " + getMoney() + "\n" +
                 "food: " + getFood() + "\n");
     }
