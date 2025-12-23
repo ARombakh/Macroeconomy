@@ -11,13 +11,27 @@ package macroeconomy;
 public class Purchase {
     private Farm farm;
     private Reseller reseller;
+    private int units;
+    private int money;
 
+    public int getUnits() {
+        return units;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+    
     public Farm getFarm() {
         return farm;
     }
 
     public Reseller getReseller() {
         return reseller;
+    }
+
+    public void setUnits(int units) {
+        this.units = units;
     }
 
     public void setFarm(Farm farm) {
@@ -27,6 +41,10 @@ public class Purchase {
     public void setReseller(Reseller reseller) {
         this.reseller = reseller;
     }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
     
     public Purchase (Farm farm, Reseller reseller) {
         setFarm(farm);
@@ -34,7 +52,7 @@ public class Purchase {
     }
     
     public void makePurchase(int units, int price) {
-        farm.sellFood(units, price);
-        reseller.buyFood(units, price);
+        setUnits(units);
+        setMoney(units * price);
     }
 }
