@@ -9,13 +9,23 @@ package macroeconomy;
  * @author artyom
  */
 public class Worker {
+    private int id;
     private double productivity;
     private int money;
     private int deposit;
     private int foodCapacity;
     private int foodConsumptMnth;
     private int labor;
+    
+    public Worker(int id, double productivity) {
+        setId(id);
+        setProductivity(productivity);
+    }
 
+    public int getId() {
+        return id;
+    }
+    
     public double getProductivity() {
         return productivity;
     }
@@ -40,6 +50,10 @@ public class Worker {
         return labor;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setProductivity(double productivity) {
         this.productivity = productivity;
     }
@@ -62,5 +76,16 @@ public class Worker {
 
     public void setLabor(int labor) {
         this.labor = labor;
+    }
+    
+    public void receiveMoney(Work work) {
+        setMoney(getMoney() + work.getMoney());
+    }
+    
+    public String state () {
+        return ("id: " + getId() + "\n" +
+                "food: " + getDeposit() + "\n" +
+                "money: " + getMoney() + "\n" +
+                "productivity: " + getProductivity() + "\n");
     }
 }
