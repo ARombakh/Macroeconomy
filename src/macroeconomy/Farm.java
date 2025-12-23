@@ -51,14 +51,18 @@ public class Farm {
         setProductivity(productivity);
     }
     
-    public void sellFood (int units, int price) {
-        int cost = units * price;
-        setFood(getFood() - units);
-        setMoney(getMoney() + cost);
+    public void receiveFood (Work work) {
+        setFood(getFood() + work.getFood());
+        setMoney(getMoney() - work.getMoney());
+    }
+    
+    public void sellFood (Purchase purchase) {
+        setFood(getFood() - purchase.getUnits());
+        setMoney(getMoney() + purchase.getMoney());
     }
     
     public String state () {
-        return ("id: " + getId() + "\n" +
+        return ("Farm id: " + getId() + "\n" +
                 "food: " + getFood() + "\n" +
                 "money: " + getMoney() + "\n" +
                 "productivity: " + getProductivity() + "\n");
