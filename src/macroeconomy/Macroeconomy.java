@@ -19,7 +19,7 @@ public class Macroeconomy {
         farm.setFood(50);
         farm.setMoney(0);
         
-        System.out.printf(farm.state());
+        System.out.println(farm.state());
         
         Reseller reseller = new Reseller(0, 500);
         
