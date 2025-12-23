@@ -50,7 +50,7 @@ public class Purchase {
         setFarm(farm);
         setReseller(reseller);
     }
-    
+
     public void makePurchase(int units, int price) {
         setUnits(units);
         setMoney(units * price);
