@@ -9,11 +9,20 @@ package macroeconomy;
  * @author artyom
  */
 public class Farm {
+    private static int counter = 0;
     private int id;
     private int food;
     private int money;
     private double productivity;
 
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        Farm.counter = counter;
+    }
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -46,12 +55,13 @@ public class Farm {
         return money;
     }
     
-    public Farm (int id, double productivity) {
-        setId(id);
+    public Farm (double productivity) {
+        setId(getCounter());
         setProductivity(productivity);
+        setCounter(getCounter() + 1);
     }
     
-    public void receiveFood (Work work) {
+    public void produceFood (Work work) {
         setFood(getFood() + work.getFood());
         setMoney(getMoney() - work.getMoney());
     }

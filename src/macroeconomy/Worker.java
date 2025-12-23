@@ -83,7 +83,7 @@ public class Worker {
     }
     
     public String state () {
-        return ("id: " + getId() + "\n" +
+        return ("Worker id: " + getId() + "\n" +
                 "food: " + getDeposit() + "\n" +
                 "money: " + getMoney() + "\n" +
                 "productivity: " + getProductivity() + "\n");
