@@ -11,6 +11,8 @@ import macroeconomy.fertilizers.Fertilizer;
  * @author artyom
  */
 public class Farming {
+    private static int counter = 0;
+    private int id;
     private Worker worker;
     private Farm farm;
     private int food;
@@ -37,6 +39,14 @@ public class Farming {
         return farm;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
     public void setFertilizerQty(double fertilizerQty) {
         this.fertilizerQty = fertilizerQty;
     }
@@ -56,8 +66,18 @@ public class Farming {
     public void setFarm(Farm farm) {
         this.farm = farm;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public static void setCounter(int counter) {
+        Farming.counter = counter;
+    }
     
     public Farming (Worker worker, Farm farm) {
+        setId(getCounter());
+        setCounter(getCounter() + 1);
         setWorker(worker);
         setFarm(farm);
     }
@@ -66,6 +86,7 @@ public class Farming {
         setMoney(salary);
         setFood((int)(worker.getProductivity() * salary *
                         farm.getProductivity()));
+        setFertilizerQty(0);
     }
     
     public void doWork (int salary, Fertilizer fertilizer) {
@@ -75,7 +96,7 @@ public class Farming {
     }
     
     public String state () {
-        return "Farming id: null\n" +
+        return "Farming id: " + getId() + "\n" +
                 "worker id: " + worker.getId() + "\n" +
                 "farm id: " + farm.getId() + "\n" +
                 "food: " + getFood() + "\n" +

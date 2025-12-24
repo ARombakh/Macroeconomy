@@ -47,6 +47,8 @@ public class Fertilizer {
     }
     
     public Fertilizer(double prodEnahnceQuot, double workPerUnit) {
+        setId(getCounter());
+        setCounter(getCounter() + 1);
         setProdEnahnceQuot(prodEnahnceQuot);
         setWorkPerUnit(workPerUnit);
     }
