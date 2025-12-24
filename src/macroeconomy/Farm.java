@@ -73,6 +73,7 @@ public class Farm {
     public void produceFood (Farming farming) {
         setFood(getFood() + farming.getFood());
         setMoney(getMoney() - farming.getMoney());
+        setFertilizerQty(getFertilizerQty() - farming.getFertilizerQty());
     }
     
     public void sellFood (Purchase purchase) {
@@ -84,6 +85,7 @@ public class Farm {
         return ("Farm id: " + getId() + "\n" +
                 "food: " + getFood() + "\n" +
                 "money: " + getMoney() + "\n" +
+                "fertilizer: " + getFertilizerQty() + "\n" +
                 "productivity: " + getProductivity() + "\n");
     }
 }

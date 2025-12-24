@@ -104,5 +104,15 @@ public class Macroeconomy {
         System.out.println(fertilizer.state());
         
         System.out.println(farming2.state());
+        
+        System.out.println("Farm before making food with fertilizer:");
+        
+        System.out.println(farm.state());
+        
+        System.out.println("Farm after making food with fertilizer:");
+        
+        farm.produceFood(farming2);
+        
+        System.out.println(farm.state());
     }
 }
