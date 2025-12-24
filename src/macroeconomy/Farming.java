@@ -4,6 +4,8 @@
  */
 package macroeconomy;
 
+import macroeconomy.fertilizers.Fertilizer;
+
 /**
  *
  * @author artyom
@@ -13,6 +15,11 @@ public class Farming {
     private Farm farm;
     private int food;
     private int money;
+    private double fertilizerQty;
+
+    public double getFertilizerQty() {
+        return fertilizerQty;
+    }
 
     public int getFood() {
         return food;
@@ -28,6 +35,10 @@ public class Farming {
 
     public Farm getFarm() {
         return farm;
+    }
+
+    public void setFertilizerQty(double fertilizerQty) {
+        this.fertilizerQty = fertilizerQty;
     }
 
     public void setFood(int food) {
@@ -53,7 +64,13 @@ public class Farming {
     
     public void doWork (int salary) {
         setMoney(salary);
-        setFood((int)(worker.getProductivity() * salary
-                        * farm.getProductivity()));
+        setFood((int)(worker.getProductivity() * salary *
+                        farm.getProductivity()));
+    }
+    
+    public void doWork (int salary, Fertilizer fertilizer) {
+        doWork(salary);
+        setFertilizerQty((double)getFood());
+        setFood((int)(getFood() * fertilizer.getProdEnahnceQuot()));
     }
 }

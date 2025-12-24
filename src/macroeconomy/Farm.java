@@ -14,6 +14,15 @@ public class Farm {
     private int food;
     private int money;
     private double productivity;
+    private double fertilizerQty;
+
+    public double getFertilizerQty() {
+        return fertilizerQty;
+    }
+
+    public void setFertilizerQty(double fertilizerQty) {
+        this.fertilizerQty = fertilizerQty;
+    }
 
     public static int getCounter() {
         return counter;
