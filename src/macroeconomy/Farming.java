@@ -8,7 +8,7 @@ package macroeconomy;
  *
  * @author artyom
  */
-public class Work {
+public class Farming {
     private Worker worker;
     private Farm farm;
     private int food;
@@ -46,7 +46,7 @@ public class Work {
         this.farm = farm;
     }
     
-    public Work (Worker worker, Farm farm) {
+    public Farming (Worker worker, Farm farm) {
         setWorker(worker);
         setFarm(farm);
     }

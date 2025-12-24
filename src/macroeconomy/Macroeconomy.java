@@ -17,7 +17,7 @@ public class Macroeconomy {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {/*
+    public static void main(String[] args) {
         Farm farm = new Farm(1.5);
         
         farm.setFood(50);
@@ -46,14 +46,14 @@ public class Macroeconomy {
         
         System.out.println(worker.state());
         
-        Work work = new Work(worker, farm);
+        Farming farming = new Farming(worker, farm);
         
-        work.doWork(3);
+        farming.doWork(3);
         
-        farm.produceFood(work);
-        worker.receiveMoney(work);
+        farm.produceFood(farming);
+        worker.receiveMoney(farming);
         
-        System.out.println("After work");
+        System.out.println("After farming");
         
         System.out.println(farm.state());
         System.out.println(worker.state());
@@ -94,5 +94,5 @@ public class Macroeconomy {
         System.out.println(plant.state());
         
         System.out.println(worker.state());
-    */}
+    }
 }

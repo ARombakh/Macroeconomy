@@ -49,18 +49,19 @@ public class FertilizerProduction {
     }
     
     public FertilizerProduction(Fertilizer fertilizer, FertilizerPlant plant,
-                                Worker worker, double salary) {
+                                Worker worker) {
         setFertilizer(fertilizer);
         setPlant(plant);
         setWorker(worker);
-        FertilizerOutput output = new FertilizerOutput(worker, plant,
-                                                    fertilizer);
-        setOutput(output);
+        setOutput(new FertilizerOutput(worker, plant, fertilizer));
+    }
+    
+    public void produce(double salary) {
         getOutput().produceFertilizer(salary);
         getWorker().receiveMoney(output);
         getPlant().produceFertilizer(output);
     }
-    
+    /*
     public static void main(String[] args) {
         Fertilizer fertilizer = new Fertilizer(2.5, 1.3);
         Worker worker = new Worker(1, 1.7);
@@ -68,15 +69,17 @@ public class FertilizerProduction {
 
         System.out.println("Before production");
         
+        FertilizerProduction production = new FertilizerProduction(fertilizer,
+                                        plant, worker);
+        
         System.out.println(plant.state());
         System.out.println(worker.state());
         
-        FertilizerProduction production = new FertilizerProduction(fertilizer,
-                                        plant, worker, 17.0);
-        
         System.out.println("After production");
+        
+        production.produce(17.0);
         
         System.out.println(production.getPlant().state());
         System.out.println(production.getWorker().state());
-    }
+    }*/
 }

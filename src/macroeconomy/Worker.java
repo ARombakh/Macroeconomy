@@ -80,8 +80,8 @@ public class Worker {
         this.labor = labor;
     }
     
-    public void receiveMoney(Work work) {
-        setMoney(getMoney() + work.getMoney());
+    public void receiveMoney(Farming farming) {
+        setMoney(getMoney() + farming.getMoney());
     }
     
     public void receiveMoney(FertilizerOutput fProd) {

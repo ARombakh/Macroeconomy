@@ -61,9 +61,9 @@ public class Farm {
         setCounter(getCounter() + 1);
     }
     
-    public void produceFood (Work work) {
-        setFood(getFood() + work.getFood());
-        setMoney(getMoney() - work.getMoney());
+    public void produceFood (Farming farming) {
+        setFood(getFood() + farming.getFood());
+        setMoney(getMoney() - farming.getMoney());
     }
     
     public void sellFood (Purchase purchase) {
