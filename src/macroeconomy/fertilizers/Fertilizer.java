@@ -52,8 +52,8 @@ public class Fertilizer {
     }
     
     public String state() {
-        return ("Fertilizer id: " + getId() +
-                "prodEnahnceQuot: " + getProdEnahnceQuot() +
-                "workPerUnit: " + getWorkPerUnit());
+        return ("Fertilizer id: " + getId() + "\n" +
+                "prodEnahnceQuot: " + getProdEnahnceQuot() + "\n" +
+                "workPerUnit: " + getWorkPerUnit()) + "\n";
     }
 }

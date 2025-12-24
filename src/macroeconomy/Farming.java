@@ -73,4 +73,13 @@ public class Farming {
         setFertilizerQty((double)getFood());
         setFood((int)(getFood() * fertilizer.getProdEnahnceQuot()));
     }
+    
+    public String state () {
+        return "Farming id: null\n" +
+                "worker id: " + worker.getId() + "\n" +
+                "farm id: " + farm.getId() + "\n" +
+                "food: " + getFood() + "\n" +
+                "money: " + getMoney() + "\n" +
+                "fertilizerQty: " + getFertilizerQty() + "\n";
+    }
 }

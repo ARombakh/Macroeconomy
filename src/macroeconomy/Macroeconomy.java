@@ -94,5 +94,15 @@ public class Macroeconomy {
         System.out.println(plant.state());
         
         System.out.println(worker.state());
+        
+        System.out.println("Using fertilizer in farming");
+        
+        Farming farming2 = new Farming(worker, farm);
+        
+        farming2.doWork(3, fertilizer);
+        
+        System.out.println(fertilizer.state());
+        
+        System.out.println(farming2.state());
     }
 }
