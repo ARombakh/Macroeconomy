@@ -2,13 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package macroeconomy;
+package macroeconomy.fertilizers;
+
+import macroeconomy.Worker;
 
 /**
  *
  * @author artyom
  */
-public class FertilizerProduction {
+public class FertilizerOutput {
     private FertilizerPlant plant;
     private Worker worker;
     private Fertilizer fertilizer;
@@ -55,7 +57,7 @@ public class FertilizerProduction {
         this.fertilizerQuant = fertilizerQuant;
     }
     
-    public FertilizerProduction(Worker worker, FertilizerPlant plant,
+    public FertilizerOutput(Worker worker, FertilizerPlant plant,
                                 Fertilizer fertilizer) {
         setWorker(worker);
         setPlant(plant);

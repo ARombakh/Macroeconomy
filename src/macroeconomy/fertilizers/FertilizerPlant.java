@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package macroeconomy;
+package macroeconomy.fertilizers;
 
 /**
  *
@@ -23,7 +23,7 @@ public class FertilizerPlant {
         return productivity;
     }
 
-    public void setMoney(int money) {
+    public void setMoney (int money) {
         this.money = money;
     }
 
@@ -59,6 +59,11 @@ public class FertilizerPlant {
         setId(getCounter());
         setProductivity(productivity);
         setCounter(getCounter() + 1);
+    }
+    
+    public void produceFertilizer(FertilizerOutput fProd) {
+        setFertilizerQty(getFertilizerQty() + fProd.getFertilizerQuant());
+        setMoney(getMoney() - fProd.getMoney());
     }
     
     public String state () {

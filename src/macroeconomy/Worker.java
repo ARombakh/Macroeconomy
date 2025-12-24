@@ -4,6 +4,8 @@
  */
 package macroeconomy;
 
+import macroeconomy.fertilizers.FertilizerOutput;
+
 /**
  *
  * @author artyom
@@ -80,6 +82,10 @@ public class Worker {
     
     public void receiveMoney(Work work) {
         setMoney(getMoney() + work.getMoney());
+    }
+    
+    public void receiveMoney(FertilizerOutput fProd) {
+        setMoney(getMoney() + fProd.getMoney());
     }
     
     public String state () {

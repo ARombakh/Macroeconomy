@@ -4,6 +4,10 @@
  */
 package macroeconomy;
 
+import macroeconomy.fertilizers.FertilizerPlant;
+import macroeconomy.fertilizers.Fertilizer;
+import macroeconomy.fertilizers.FertilizerOutput;
+
 /**
  *
  * @author artyom
@@ -13,7 +17,7 @@ public class Macroeconomy {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) {/*
         Farm farm = new Farm(1.5);
         
         farm.setFood(50);
@@ -67,19 +71,28 @@ public class Macroeconomy {
         
         FertilizerPlant plant = new FertilizerPlant(1.8);
         
+        plant.setMoney(50);
+        
         System.out.println(worker.state());
         
         System.out.println(plant.state());
         
         Fertilizer fertilizer = new Fertilizer(2.5, 1.3);
         
-        FertilizerProduction fProd = new FertilizerProduction(worker, plant,
+        FertilizerOutput fProd = new FertilizerOutput(worker, plant,
                                                 fertilizer);
         
         fProd.produceFertilizer(17);
         
         System.out.println(fProd.state());
         
-        System.out.println(17 * 1.8 * 1.7 / 1.3); 
-    }
+        plant.produceFertilizer(fProd);
+        worker.receiveMoney(fProd);
+        
+        System.out.println("After fertilizer production");
+        
+        System.out.println(plant.state());
+        
+        System.out.println(worker.state());
+    */}
 }
