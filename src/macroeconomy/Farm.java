@@ -70,10 +70,16 @@ public class Farm {
         setCounter(getCounter() + 1);
     }
     
-    public void produceFood (Farming farming) {
-        setFood(getFood() + farming.getFood());
-        setMoney(getMoney() - farming.getMoney());
-        setFertilizerQty(getFertilizerQty() - farming.getFertilizerQty());
+    public void payMoney(int money) {
+        setMoney(getMoney() - money);
+    }
+    
+    public void spendFertilizer (double fertilizer) {
+        setFertilizerQty(getFertilizerQty() - fertilizer);
+    }
+    
+    public void produceFood (int food) {
+        setFood(getFood() + food);
     }
     
     public void sellFood (Purchase purchase) {

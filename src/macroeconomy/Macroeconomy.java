@@ -31,9 +31,9 @@ public class Macroeconomy {
         
         FarmingProcess fProcess = new FarmingProcess(worker, farm);
         
-        fProcess.produce(3);
+        fProcess.produceFood(3);
         
-        System.out.println(fProcess.getFarming().state());
+        System.out.println(fProcess.toString());
         
         System.out.println("After farming");
         
@@ -46,9 +46,9 @@ public class Macroeconomy {
         
         FarmingProcess fProcess2 = new FarmingProcess(worker, farm);
         
-        fProcess2.produce(3, fertilizer);
+        fProcess2.produceFood(3, fertilizer);
         
-        System.out.println(fProcess2.getFarming().state());
+        System.out.println(fProcess2.toString());
         
         System.out.println("After fertilizer");
 
