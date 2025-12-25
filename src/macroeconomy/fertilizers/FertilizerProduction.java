@@ -74,4 +74,13 @@ public class FertilizerProduction {
         getPlant().payMoney((int)salary);
         getPlant().produceFertilizer(getFertilizerQuant());
     }
+    
+    public String toString() {
+        return "Fertilizer Production\n" +
+                "plant id: " + plant.getId() + "\n" +
+                "worker id: " + worker.getId() + "\n" +
+                "fertilizer id: " + fertilizer.getId() + "\n" +
+                "money: " + money + "\n" +
+                "fertilizer quantity: " + fertilizerQuant + "\n";
+    }
 }

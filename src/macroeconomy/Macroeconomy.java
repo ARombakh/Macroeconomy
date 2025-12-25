@@ -6,6 +6,7 @@ package macroeconomy;
 
 import macroeconomy.fertilizers.FertilizerPlant;
 import macroeconomy.fertilizers.Fertilizer;
+import macroeconomy.fertilizers.FertilizerProduction;
 
 /**
  *
@@ -53,5 +54,24 @@ public class Macroeconomy {
 
         System.out.println(farm.state());
         System.out.println(worker.state());
+        
+        FertilizerPlant plant = new FertilizerPlant(1.4);
+        
+        FertilizerProduction fProd = new FertilizerProduction(fertilizer,
+                                        plant, worker);
+        
+        plant.setMoney(20);
+        
+        System.out.println("Producing fertilizers");
+        
+        System.out.println(plant.toString());
+        
+        System.out.println(fProd.toString());
+        fProd.produce(17);
+        
+        System.out.println("Fertilizers production");
+        
+        System.out.println(plant.toString());
+        System.out.println(fProd.toString());
     }
 }

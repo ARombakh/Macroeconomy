@@ -69,7 +69,8 @@ public class FertilizerPlant {
         setMoney(getMoney() - money);
     }
     
-    public String state () {
+    @Override
+    public String toString () {
         return ("FertilizerPlant id: " + getId() + "\n" +
                 "money: " + getMoney() + "\n" +
                 "productivity: " + getProductivity() + "\n" +
