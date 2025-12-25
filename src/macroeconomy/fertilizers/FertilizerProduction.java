@@ -13,8 +13,17 @@ import macroeconomy.Worker;
 public class FertilizerProduction {
     private Fertilizer fertilizer;
     private FertilizerPlant plant;
-    private FertilizerOutput output;
     private Worker worker;
+    private int money;
+    private int fertilizerQuant;
+
+    public int getMoney() {
+        return money;
+    }
+    
+    public int getFertilizerQuant() {
+        return fertilizerQuant;
+    }
 
     public Fertilizer getFertilizer() {
         return fertilizer;
@@ -24,24 +33,24 @@ public class FertilizerProduction {
         return plant;
     }
 
-    public FertilizerOutput getOutput() {
-        return output;
-    }
-
     public Worker getWorker() {
         return worker;
     }
 
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public void setFertilizerQuant(int fertilizerQuant) {
+        this.fertilizerQuant = fertilizerQuant;
+    }
+    
     public void setFertilizer(Fertilizer fertilizer) {
         this.fertilizer = fertilizer;
     }
 
     public void setPlant(FertilizerPlant plant) {
         this.plant = plant;
-    }
-
-    public void setOutput(FertilizerOutput output) {
-        this.output = output;
     }
 
     public void setWorker(Worker worker) {
@@ -53,33 +62,16 @@ public class FertilizerProduction {
         setFertilizer(fertilizer);
         setPlant(plant);
         setWorker(worker);
-        setOutput(new FertilizerOutput(worker, plant, fertilizer));
     }
-    
+        
     public void produce(double salary) {
-        getOutput().produceFertilizer(salary);
-        getWorker().receiveMoney(output);
-        getPlant().produceFertilizer(output);
+        setMoney((int)salary);
+        setFertilizerQuant((int)(salary * worker.getProductivity() *
+                            plant.getProductivity() /
+                            fertilizer.getWorkPerUnit()));
+        
+        getWorker().receiveMoney((int)salary);
+        getPlant().payMoney((int)salary);
+        getPlant().produceFertilizer(getFertilizerQuant());
     }
-    /*
-    public static void main(String[] args) {
-        Fertilizer fertilizer = new Fertilizer(2.5, 1.3);
-        Worker worker = new Worker(1, 1.7);
-        FertilizerPlant plant = new FertilizerPlant(1.8);
-
-        System.out.println("Before production");
-        
-        FertilizerProduction production = new FertilizerProduction(fertilizer,
-                                        plant, worker);
-        
-        System.out.println(plant.state());
-        System.out.println(worker.state());
-        
-        System.out.println("After production");
-        
-        production.produce(17.0);
-        
-        System.out.println(production.getPlant().state());
-        System.out.println(production.getWorker().state());
-    }*/
 }

@@ -6,7 +6,6 @@ package macroeconomy;
 
 import macroeconomy.fertilizers.FertilizerPlant;
 import macroeconomy.fertilizers.Fertilizer;
-import macroeconomy.fertilizers.FertilizerOutput;
 
 /**
  *

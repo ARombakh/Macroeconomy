@@ -61,9 +61,12 @@ public class FertilizerPlant {
         setCounter(getCounter() + 1);
     }
     
-    public void produceFertilizer(FertilizerOutput fProd) {
-        setFertilizerQty(getFertilizerQty() + fProd.getFertilizerQuant());
-        setMoney(getMoney() - fProd.getMoney());
+    public void produceFertilizer(int fertilizer) {
+        setFertilizerQty(getFertilizerQty() + fertilizer);
+    }
+    
+    public void payMoney(int money) {
+        setMoney(getMoney() - money);
     }
     
     public String state () {
