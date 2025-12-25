@@ -4,6 +4,8 @@
  */
 package macroeconomy;
 
+import macroeconomy.fertilizers.Fertilizer;
+
 /**
  *
  * @author artyom
@@ -14,7 +16,16 @@ public class Farm {
     private int food;
     private int money;
     private double productivity;
+    private Fertilizer fertilizer;
     private double fertilizerQty;
+
+    public Fertilizer getFertilizer() {
+        return fertilizer;
+    }
+
+    public void setFertilizer(Fertilizer fertilizer) {
+        this.fertilizer = fertilizer;
+    }
 
     public double getFertilizerQty() {
         return fertilizerQty;

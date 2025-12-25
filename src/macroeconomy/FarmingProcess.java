@@ -18,12 +18,24 @@ public class FarmingProcess {
     private int food;
     private int money;
     private double fertilizerQty;
+    private Fertilizer fertilizer;
         
     public FarmingProcess(Worker worker, Farm farm) {
         setId(getCounter());
         setCounter(getCounter() + 1);
         setWorker(worker);
         setFarm(farm);
+        if (farm.getFertilizer() != null) {
+            setFertilizer(farm.getFertilizer());
+        }
+    }
+
+    public Fertilizer getFertilizer() {
+        return fertilizer;
+    }
+
+    public void setFertilizer(Fertilizer fertilizer) {
+        this.fertilizer = fertilizer;
     }
 
     public Farm getFarm() {
@@ -82,13 +94,8 @@ public class FarmingProcess {
         this.worker = worker;
     }
     
-    public void produceFood (int salary) {
+    public void produceFood(int salary) {
         doWork (salary);
-        updateContractors();
-    }
-    
-    public void produceFood (int salary, Fertilizer fertilizer) {
-        doWork (salary, fertilizer);
         updateContractors();
     }
 
@@ -97,12 +104,12 @@ public class FarmingProcess {
         setFood((int)(worker.getProductivity() * salary *
                         farm.getProductivity()));
         setFertilizerQty(0);
-    }
-    
-    public void doWork (int salary, Fertilizer fertilizer) {
-        doWork(salary);
-        setFertilizerQty((double)getFood());
-        setFood((int)(getFood() * fertilizer.getProdEnahnceQuot()));
+        
+        if (getFarm().getFertilizer() != null) {
+            setFertilizerQty((double)getFood());
+            setFood((int)(getFood() *
+                    getFarm().getFertilizer() .getProdEnahnceQuot()));
+        }
     }
 
     public void updateContractors() {

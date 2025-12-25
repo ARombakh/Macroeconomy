@@ -40,13 +40,19 @@ public class Macroeconomy {
         System.out.println(farm.state());
         System.out.println(worker.state());
 
+        System.out.println("Before using fertilizer");
         Fertilizer fertilizer = new Fertilizer(2.5, 1.8);
+        
+        farm.setFertilizer(fertilizer);
+        farm.setFertilizerQty(15);
+        
+        System.out.println(farm.state());
         
         System.out.println(fertilizer.state());
         
         FarmingProcess fProcess2 = new FarmingProcess(worker, farm);
         
-        fProcess2.produceFood(3, fertilizer);
+        fProcess2.produceFood(3);
         
         System.out.println(fProcess2.toString());
         
