@@ -13,9 +13,8 @@ public class Worker {
     private double productivity;
     private int money;
     private int deposit;
-    private int foodCapacity;
-    private int foodConsumptMnth;
-    private int labor;
+    private static final int foodCapacity = 30;
+    private static final int foodConsumptMnth = 10;
     
     public Worker(int id, double productivity) {
         setId(id);
@@ -38,18 +37,6 @@ public class Worker {
         return deposit;
     }
 
-    public int getFoodCapacity() {
-        return foodCapacity;
-    }
-
-    public int getFoodConsumptMnth() {
-        return foodConsumptMnth;
-    }
-
-    public int getLabor() {
-        return labor;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -65,19 +52,7 @@ public class Worker {
     public void setDeposit(int deposit) {
         this.deposit = deposit;
     }
-
-    public void setFoodCapacity(int foodCapacity) {
-        this.foodCapacity = foodCapacity;
-    }
-
-    public void setFoodConsumptMnth(int foodConsumptMnth) {
-        this.foodConsumptMnth = foodConsumptMnth;
-    }
-
-    public void setLabor(int labor) {
-        this.labor = labor;
-    }
-    
+   
     public void receiveMoney(int salary) {
         setMoney(getMoney() + salary);
     }
