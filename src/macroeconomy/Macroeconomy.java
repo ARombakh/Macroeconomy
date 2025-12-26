@@ -4,6 +4,8 @@
  */
 package macroeconomy;
 
+import macroeconomy.farming.FarmingProcess;
+import macroeconomy.farming.Farm;
 import macroeconomy.fertilizers.FertilizerPlant;
 import macroeconomy.fertilizers.Fertilizer;
 import macroeconomy.fertilizers.FertilizerProduction;

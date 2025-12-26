@@ -4,6 +4,8 @@
  */
 package macroeconomy;
 
+import macroeconomy.farming.Farm;
+
 /**
  *
  * @author artyom
