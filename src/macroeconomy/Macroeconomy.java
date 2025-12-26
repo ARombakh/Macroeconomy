@@ -4,6 +4,7 @@
  */
 package macroeconomy;
 
+import macroeconomy.banking.Bank;
 import macroeconomy.farming.FarmingProcess;
 import macroeconomy.farming.Farm;
 import macroeconomy.fertilizers.FertilizerPlant;
@@ -22,64 +23,19 @@ public class Macroeconomy {
     public static void main(String[] args) {
         Farm farm = new Farm(1.5);
         
-        farm.setFood(50);
-        farm.setMoney(0);
+        Bank bank = new Bank();
+        bank.setMoney(500);
         
-        System.out.println(farm.state());
+        System.out.println(farm.toString());
         
-        Worker worker = new Worker(0, 1.7);
+        System.out.println(bank.toString());
         
-        System.out.println(worker.state());
+        System.out.println("After loan extension");
+        bank.extendLoan(100, 5, .06);
+        farm.setLoan(bank.getLoan());
         
-        FarmingProcess fProcess = new FarmingProcess(worker, farm);
+        System.out.println(bank.toString());
         
-        fProcess.produceFood(3);
-        
-        System.out.println(fProcess.toString());
-        
-        System.out.println("After farming");
-        
-        System.out.println(farm.state());
-        System.out.println(worker.state());
-
-        System.out.println("Before using fertilizer");
-        Fertilizer fertilizer = new Fertilizer(2.5, 1.8);
-        
-        farm.setFertilizer(fertilizer);
-        farm.setFertilizerQty(15);
-        
-        System.out.println(farm.state());
-        
-        System.out.println(fertilizer.state());
-        
-        FarmingProcess fProcess2 = new FarmingProcess(worker, farm);
-        
-        fProcess2.produceFood(3);
-        
-        System.out.println(fProcess2.toString());
-        
-        System.out.println("After fertilizer");
-
-        System.out.println(farm.state());
-        System.out.println(worker.state());
-        
-        FertilizerPlant plant = new FertilizerPlant(1.4);
-        
-        FertilizerProduction fProd = new FertilizerProduction(fertilizer,
-                                        plant, worker);
-        
-        plant.setMoney(20);
-        
-        System.out.println("Producing fertilizers");
-        
-        System.out.println(plant.toString());
-        
-        System.out.println(fProd.toString());
-        fProd.produce(17);
-        
-        System.out.println("Fertilizers production");
-        
-        System.out.println(plant.toString());
-        System.out.println(fProd.toString());
+        System.out.println(farm.toString());
     }
 }

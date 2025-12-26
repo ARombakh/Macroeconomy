@@ -5,6 +5,7 @@
 package macroeconomy.farming;
 
 import macroeconomy.Purchase;
+import macroeconomy.banking.Loan;
 import macroeconomy.fertilizers.Fertilizer;
 
 /**
@@ -19,7 +20,23 @@ public class Farm {
     private double productivity;
     private Fertilizer fertilizer;
     private double fertilizerQty;
+    private Loan loan;
 
+    public Farm (double productivity) {
+        setId(getCounter());
+        setProductivity(productivity);
+        setCounter(getCounter() + 1);
+    }
+
+    public Loan getLoan() {
+        return loan;
+    }
+
+    public void setLoan(Loan loan) {
+        setMoney(getMoney() + loan.getSum());
+        this.loan = loan;
+    }
+    
     public Fertilizer getFertilizer() {
         return fertilizer;
     }
@@ -69,17 +86,15 @@ public class Farm {
     }
 
     public void setMoney(int money) {
+        if (money < 0) {
+            throw new IllegalArgumentException("Money amount of Farm cannot " +
+                    "be lesser than 0\n");
+        }
         this.money = money;
     }
 
     public int getMoney() {
         return money;
-    }
-    
-    public Farm (double productivity) {
-        setId(getCounter());
-        setProductivity(productivity);
-        setCounter(getCounter() + 1);
     }
     
     public void payMoney(int money) {
@@ -99,7 +114,7 @@ public class Farm {
         setMoney(getMoney() + purchase.getMoney());
     }
     
-    public String state () {
+    public String toString () {
         return ("Farm id: " + getId() + "\n" +
                 "food: " + getFood() + "\n" +
                 "money: " + getMoney() + "\n" +
