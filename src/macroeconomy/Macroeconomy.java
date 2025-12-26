@@ -37,5 +37,7 @@ public class Macroeconomy {
         System.out.println(bank.toString());
         
         System.out.println(farm.toString());
+        
+        farm.toString();
     }
 }

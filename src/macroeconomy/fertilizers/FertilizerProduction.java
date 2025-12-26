@@ -75,6 +75,7 @@ public class FertilizerProduction {
         getPlant().produceFertilizer(getFertilizerQuant());
     }
     
+    @Override
     public String toString() {
         return "Fertilizer Production\n" +
                 "plant id: " + plant.getId() + "\n" +

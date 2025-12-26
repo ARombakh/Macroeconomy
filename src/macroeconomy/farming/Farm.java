@@ -116,8 +116,10 @@ public class Farm {
     
     public String toString () {
         return ("Farm id: " + getId() + "\n" +
-                "food: " + getFood() + "\n" +
+                "loan\n" +
+                (getLoan() == null ? "absent\n" : getLoan().toString()) +
                 "money: " + getMoney() + "\n" +
+                "food: " + getFood() + "\n" +
                 "fertilizer: " + getFertilizerQty() + "\n" +
                 "productivity: " + getProductivity() + "\n");
     }
